@@ -22,3 +22,4 @@
 20. lower and numeric and special
 21. upper and numeric and special 
 22. lower and upper and numeric and special 
+23. use provided code to write to the password box by returning password from the generate function
