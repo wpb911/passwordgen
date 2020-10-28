@@ -51,39 +51,34 @@ function generatePassword() {
         // only lower case letters in password 
         if (lowerLet && !upperLet && !numbers && !specials ) {
             wholeChar = wholeChar.concat(lowerArr);
-            alert("Whole Char lower = " + wholeChar);
-            
+                        
         }
         // only upper case letters in password
         else if (!lowerLet && upperLet && !numbers && !specials ) {
             wholeChar = wholeChar.concat(upperArr);
-            alert("Whole Char upper = " + wholeChar);
-            
+                       
         }
         // only numbers in password  
         else if (!lowerLet && !upperLet && numbers && !specials ) {
             wholeChar = wholeChar.concat(numberArr);
-            alert("Whole Char number = " + wholeChar);
-            
+                       
         }
         // only special characters in password 
         else if (!lowerLet && !upperLet && !numbers && specials ) {
             wholeChar = wholeChar.concat(specialArr);
-            alert("Whole Char special = " + wholeChar);
+            
         }
         // only lowercase and uppercase characters in password 
         else if (lowerLet && upperLet && !numbers && !specials) {
             wholeChar = wholeChar.concat(lowerArr);
             wholeChar = wholeChar.concat(upperArr);
-            alert("Whole Char both upper and lower= " + wholeChar);
-            
+                        
         }
         // only lowercase and numeric characters in password 
         else if (lowerLet && !upperLet && numbers && !specials) {
             wholeChar = wholeChar.concat(lowerArr);
             wholeChar = wholeChar.concat(numberArr);
-            alert("Whole Char both lower and numeric = " + wholeChar);
-            
+                       
         }
         // only lowercase and special characters in password 
         else if (lowerLet && !upperLet && !numbers && specials) {
@@ -152,10 +147,7 @@ function generatePassword() {
             for(var i = 0; i < numCount; i++){
                 var num = Math.floor(Math.random() * wholeChar.length)
                 pwdArr.push(wholeChar[num]);
-                console.log("numCount = " + numCount);
-                console.log(" whole = " + wholeChar[num]);
-                console.log(" num = " + num);
-                console.log(" pwd = " + pwdArr[i]);
+                
             }
         }
         else {
