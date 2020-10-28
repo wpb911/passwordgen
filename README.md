@@ -8,9 +8,9 @@ The algorithm for the password generator creates the password using a random num
 
 ## Usage
 
-When viewing the page a sample rendering looks like [passwordgen screenshot](passwordgen.png)
+When viewing the page a sample rendering looks like [passwordgen screenshot](passwordgen.png).
 
-To view the actual page in realtime please use the chrome browser to go to [passwordgen] (https://wpb911.github.io/passwordgen/)
+To view the actual page in realtime please use the chrome browser to go to [passwordgen] (https://wpb911.github.io/passwordgen/).
 
 ## Contributing 
 Pull request are welcome.  Feedback is appreciated.
