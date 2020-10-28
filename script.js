@@ -26,13 +26,7 @@ function generatePassword() {
     
     // complete character array based on choices 
     var wholeChar = [];
-    /*
-    wholeChar = wholeChar.concat(lowerArr) ;
-    wholeChar = wholeChar.concat(upperArr) ;
-    wholeChar = wholeChar.concat(numberArr) ;
-    wholeChar = wholeChar.concat(specialArr) ; 
-     */
-
+    
     // verify the variables meet the required criteria
     var verify = false ;
 
@@ -40,7 +34,7 @@ function generatePassword() {
     var pwdArr = [];
     
     // prompt for number of characters in password 
-    var numCount = prompt("How many characters do you want in your password (choose between 8 - 128");
+    var numCount = prompt("How many characters do you want in your password (choose between 8 - 128).");
     
     // logical choices for charater types desired 
     var lowerLet = confirm("Do you desire lower case letters in your password");
@@ -49,30 +43,28 @@ function generatePassword() {
     var specials = confirm("Do you desire special characters in your password");
 
     if ( (parseInt(numCount) >= 8 && parseInt(numCount) <= 128) && (lowerLet || upperLet || numbers || specials) ) {
-        alert("Your password will be generated.");
-        alert("lowlet= " + lowerLet);
-        alert("uplet= " + upperLet);
-        alert("num= " + numbers);
-        alert("spec= " + specials);
+        
+        //alert("Your password will be generated with. lower = "  + lowerLet + " upper = " + upperLet + " numeric = " + numbers + " special= " + specials);
+        
         verify = true ;
 
         // only lower case letters in password 
         if (lowerLet && !upperLet && !numbers && !specials ) {
             wholeChar = wholeChar.concat(lowerArr);
             alert("Whole Char lower = " + wholeChar);
-            verify = true ;
+            
         }
         // only upper case letters in password
         else if (!lowerLet && upperLet && !numbers && !specials ) {
             wholeChar = wholeChar.concat(upperArr);
             alert("Whole Char upper = " + wholeChar);
-            verify = true ;
+            
         }
         // only numbers in password  
         else if (!lowerLet && !upperLet && numbers && !specials ) {
             wholeChar = wholeChar.concat(numberArr);
             alert("Whole Char number = " + wholeChar);
-            verify = true ;
+            
         }
         // only special characters in password 
         else if (!lowerLet && !upperLet && !numbers && specials ) {
@@ -99,9 +91,63 @@ function generatePassword() {
             wholeChar = wholeChar.concat(specialArr); 
 
         }
+        // only uppercase and numeric characters in password 
+        else if (!lowerLet && upperLet && numbers && !specials) {
+            wholeChar = wholeChar.concat(upperArr) ;
+            wholeChar = wholeChar.concat(numberArr) ;
+            
+        }
+        // only uppercase and special characters in password 
+        else if (!lowerLet && upperLet && !numbers && specials) {
+            wholeChar = wholeChar.concat(upperArr) ;
+            wholeChar = wholeChar.concat(specialArr) ;
+
+        }
+        // only numeric and special characters in password 
+        else if (!lowerLet && !upperLet && numbers && specials) {
+            wholeChar = wholeChar.concat(numberArr) ;
+            wholeChar = wholeChar.concat(specialArr) ;
+
+        }
+        // only lower, upper and numeric characters in password 
+        else if (lowerLet && upperLet && numbers && !specials)  {
+            wholeChar = wholeChar.concat(lowerArr) ;
+            wholeChar = wholeChar.concat(upperArr) ;
+            wholeChar = wholeChar.concat(numberArr) ;
+
+        }
+        // only lower, upper and special characters in password 
+        else if (lowerLet && upperLet && !numbers && specials) {
+            wholeChar = wholeChar.concat(lowerArr) ;         
+            wholeChar = wholeChar.concat(upperArr) ;
+            wholeChar = wholeChar.concat(specialArr) ;   
+        
+        }
+        // only lower, numeric and special characters in password 
+        else if (lowerLet && !upperLet && numbers && specials) {
+            wholeChar = wholeChar.concat(lowerArr) ;        
+            wholeChar = wholeChar.concat(numberArr) ;
+            wholeChar = wholeChar.concat(specialArr) ;   
+        
+        }
+        // only upper, numeric and special characters in password 
+        else if (!lowerLet && upperLet && numbers && specials) {           
+            wholeChar = wholeChar.concat(upperArr) ; 
+            wholeChar = wholeChar.concat(numberArr) ;
+            wholeChar = wholeChar.concat(specialArr) ;
+       
+        }
+       // all character types should be in the password 
+        else if (lowerLet && upperLet && numbers && specials) {
+            wholeChar = wholeChar.concat(lowerArr) ;
+            wholeChar = wholeChar.concat(upperArr) ;
+            wholeChar = wholeChar.concat(numberArr) ;
+            wholeChar = wholeChar.concat(specialArr) ; 
+    
+        }  
     }
     
-
+        // generate a random password from the concatenated string of the user's choices
         if (verify) {
             for(var i = 0; i < numCount; i++){
                 var num = Math.floor(Math.random() * wholeChar.length)
@@ -117,6 +163,7 @@ function generatePassword() {
             verify = false;
         }
         
+        // return the generated password
         return (pwdArr.join(''));
 
 }
