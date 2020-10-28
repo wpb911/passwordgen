@@ -4,7 +4,7 @@ This is a project that requires the development of a random password generator t
 
 ## Enhancements 
 
-The algorithm for the password generator creates the password using a random number generator which is seeded by the number of characters the user chooses for the length of the password and the character string length created by the concatenation of the requested character types.  Once the strings are created they are randomly chosen from till the requested length is satisfied.  The code verifies the users inputs for both length and required character types and notifies the user if the request for the password does not satisfy the minimum requirements.
+The algorithm for the password generator creates the password using a random number generator which is seeded by the number of characters the user chooses for the length of the password and the character string length created by the concatenation of the requested character types.  Once the strings are created they are randomly chosen from till the requested length is satisfied.  The code verifies the users inputs for both length and required character types and notifies the user if the request for the password does not satisfy the minimum requirements. The Nu HTML checker was used to check the project with no errors or warnings.
 
 ## Usage
 
